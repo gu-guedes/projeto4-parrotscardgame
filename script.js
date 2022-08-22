@@ -46,3 +46,88 @@ function comparador() {
 	return Math.random() - 0.5; 
 }
  
+
+let primeiraCarta = ""
+
+let segundaCarta = ""
+
+contadorJogadas=0
+contadorJogo = 0
+
+const fim = []
+
+
+function virarCarta(virar){
+
+
+    if(virar.children[1].classList.contains('costas')){
+        return 
+    }
+    if(primeiraCarta == ""){
+        virar.children[0].classList.toggle('frente')
+
+    virar.children[1].classList.toggle('costas')
+
+    primeiraCarta = virar
+    
+    } else if (segundaCarta == "") {
+
+        virar.children[0].classList.toggle('frente')
+
+    virar.children[1].classList.toggle('costas')
+
+    segundaCarta = virar
+
+    checkCartas()
+
+    contadorJogadas++
+    
+    }
+
+   
+
+    
+
+   
+
+
+}
+
+
+
+    
+
+
+function checkCartas()
+    {
+        const primeiroAtributo = primeiraCarta.getAttribute('data')
+        const segundoAtributo = segundaCarta.getAttribute('data')
+        
+        if(primeiroAtributo == segundoAtributo) {
+            primeiraCarta =""
+            segundaCarta =""
+
+
+
+        } else{
+
+            setTimeout( () =>
+            {
+                primeiraCarta.children[1].classList.remove('costas')
+            segundaCarta.children[1].classList.remove('costas')
+            primeiraCarta.children[0].classList.add('frente')
+            segundaCarta.children[0].classList.add('frente')
+            
+
+            primeiraCarta = ""
+            segundaCarta = ""
+
+
+
+
+            }, 500)
+            
+
+             
+        }
+    }
