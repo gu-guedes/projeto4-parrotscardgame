@@ -42,9 +42,8 @@ let numeroCartas = Number(qtde);
 
 lista.innerHTML = lista.innerHTML + listaCartas
 
-function comparador() { 
-	return Math.random() - 0.5; 
-}
+
+
  
 
 let primeiraCarta = ""
@@ -84,12 +83,18 @@ function virarCarta(virar){
     
     }
 
+    setTimeout( () =>{
+        const fim = document.querySelectorAll('.costas')
+     console.log(fim)
+
+    if( fim.length == numeroCartas){
+        alert("voce terminou com "+contadorJogadas+" jogadas")
+    }
+  }
+
+    , 500)
+
    
-
-    
-
-   
-
 
 }
 
@@ -130,4 +135,8 @@ function checkCartas()
 
              
         }
+    }
+
+    function comparador() { 
+        return Math.random() - 0.5; 
     }

@@ -73,3 +73,23 @@ img{
 width: 100px;
 height: 100px;
 }
+
+@media (max-width: 614px){
+    .nome-jogo{
+        color:#75B79E;
+    width: 541px;
+    height: 63px;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+    
+    
+    
+}
+
+
+
